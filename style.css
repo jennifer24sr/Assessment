@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+  margin: 0;
+  box-sizing: border-box;  
+}
+.body {
+    background-color: #36454F;
+}
+.blue-square-left {
+    height: 200px;
+    width: 200px;
+    background-color: #6495ED;
+    border-radius: 15px;
+    position: relative;
+    top:50px;
+    left:50px;
+    z-index: 1;
+}
+.blue-square-right {
+    height: 200px;
+    width: 200px;
+    background-color: #6495ED;
+    border-radius: 15px;
+    position: relative;
+    top:10px;
+    left: 980px;
+    right: 50px;
+}
+.form-header{
+    color: #063DA5;
+    padding-top: 20px;
+}
+.form-title {
+    text-align: center;
+    padding: 10px;
+}
+.grey-square-left {
+    height: 100px;
+    width: 100px;
+    background-color: #A9A9A9;
+    border-radius: 15px;
+    position: relative;
+    top:-180px;
+    left:10px;
+    z-index:0;
+}
+.grey-square-right {
+    height: 100px;
+    width: 100px;
+    background-color: #A9A9A9;
+    border-radius: 15px;
+    position: relative;
+    top:240px;
+    left:1100px;
+    z-index:0;
+}
+
+.login-page,.signup-page {
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly;
+    z-index: 999;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top:100px;
+    left: 200px;
+    border: 5px solid #000;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.login-page > .loginpage-image{
+    flex-direction: row;
+}
+.image-header{
+    text-align: center;
+    color: #063DA5;
+}
+.label,.checkbox,.button{
+    display: block;
+    margin: 10px 15px;
+}
+
+.column{
+    flex-basis: 50%;
+}
+.textbox{
+    margin: 10px 15px;
+    width: 70%;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+}
+.textbox:focus-visible {
+    margin: 10px 15px;
+    width: 70%;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: transparent;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: text;
+}
+.textbox:focus {
+    background:none;
+}
+.button{
+    border: none;
+    padding: 10px 15px;
+    width: 50%;
+    margin: 5% 15%;
+    background-color: #063DA5;
+    color: #fff;
+    cursor: pointer;
+}
+.Signup-option{
+    color: #A9A9A9;
+    padding: 0px 25px;
+}
+.hide-form{
+    display: none;
+}
+.alert{
+    display: none;
+    color: red;
+    font-size: 10px;
+}
+.alertmsg{
+    display: none;
+}
+.alertmsg-show {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+}
+.project-title {
+    text-align: center;
+    background-color: #063DA5;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+hr {
+    width: 50%;
+    margin: 5% 10%;
+}
+.home-page {
+    background-color: #DEDEDE;
+}
+.sidenav {
+    height: 100%;
+    width: 0; 
+    position: fixed; 
+    z-index: 5;
+    top: 0; 
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; 
+    padding-top: 60px;
+    transition: 0.5s;
+}
+.sidenav section,a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav section:hover {
+    color: #f1f1f1;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.main {
+    transition: margin-left .5s;
+    padding: 20px;
+    
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.nav-button {
+    position: relative;
+    top:-30px;
+    left: 50px;
+    z-index: 3;
+    width: 0%;
+    color: white;
+    background:none;
+    border: none;
+    cursor: pointer;
+}
+.drop-down{
+    display: block;
+    padding: 5px;
+    width: 80%;
+}
+.sign-up,.sign-in {
+      display: inline;
+      text-decoration: none;
+      color: #063DA5;
+      font-size: 15px;
+      padding: 0;
+      font-weight: bold;
+}
+    
+.signup-page {
+    position: absolute;
+    top:70px;
+    left: 200px;
+    height: 80%;
+}
+.main {
+    max-width: 50%;
+    height: max-content;
+    border: 1px solid #A9A9A9;
+    margin: auto 25%;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.label-indexpage,.inputbox {
+    display: block;
+    padding: 10px;
+}
+.inputbox {
+    width: 100%;
+    background-color:#f1f1f1;
+    border: none;
+    border:1px solid #36454F
+}
+.main-form {
+    margin: auto 25%;
+}
+.submit-button {
+    background-color: rgba(46, 204, 113,1);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10% 35%;
+}
+.msg-alert {
+    display: none;
+}
+.show-msg {
+    display: block;
+    color: red;
+    font-size: 15px;
+}

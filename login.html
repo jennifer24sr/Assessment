@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="./style.css" rel="stylesheet"/>
+    <script src="./script.js"></script>
+</head>
+<body class="body">
+    <div class="background-styles">
+        <div class=" blue-square-left"></div>
+        <div class=" grey-square-left"></div>
+        <div class=" grey-square-right"></div>
+        <div class=" blue-square-right"></div>
+    </div>
+    <div class="login-page">
+        <div class="loginpage-image column">
+            <img src="./images/login-page-image-removebg-preview.png" alt="" width="400px" height="350px"/>
+            <h2 class="image-header">Explore the World</h2>
+        </div>
+        <div class="loginpage-details column">
+            <h2 class="form-header">Sign In</h2>
+            <form action="javascript: loginSubmitLoader()">
+                <label for="name" class="label">Name</label>
+                <input type="text" class="textbox" name="name" id="loginName" onblur="alertMsgForName()"/>
+                <span id="nameAlert" class="alert">Please enter your name</span>
+
+                <label for="password" class="label">Password</label>
+                <input type="password" class="textbox" name="password" id="loginPassword" onblur="alertMsgForPassword()"/>
+                <span id="passwordAlert" class="alert">Please enter your Password</span>
+
+                <input type="checkbox" class="checkbox" name="RememberMe" id="checkbox"/>
+                <label>RememberMe</label>
+                <button type="submit" id="button" class="button">Sign In</button>
+                <p class="Signup-option">Don't have an account?
+                    <a href="Signup.html" class="sign-up">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
