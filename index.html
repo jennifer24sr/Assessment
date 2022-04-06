@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Details</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
-<body class="home-page">
-    <div class="project-title">
-        <h1>Employee Directory</h1>
-    </div>
+
+<body class="home-page" onload="createAssetElements()" id="indexPage">
     <div class="body-elements">
+        <div class="project-title">
+            <h1>Employee Directory</h1>
+        </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <section href="#" class="fa fa-plus"> New Employee</section>
@@ -54,69 +56,101 @@
                 </select>
 
             </section>
-          </div>
-          <span onclick="openNav()" class="fa fa-bars nav-button"></span>
-          <div id="main" class="main">
-                <form name="indexform" class="main-form">
-                    <h4 class="form-title">Employee Details</h4>
-                    <label for="employeeID" class="label-indexpage">Employee ID</label>
-                    <input type="text" name="employeeID" class="inputbox" id="employeeID" onblur="employeeIDValidation()" required/>
-                    <span class="msg-alert" id="employeeIDAlert">Enter employee ID</span>
+            <section>
+                <button type="button" id="CRUD" class="crud-btn">CRUD</button>
+            </section>
+        </div>
+        <span onclick="openNav()" class="fa fa-bars nav-button"></span>
+        <div id="main" class="main">
+            <form name="indexform" class="main-form">
+                <h4 class="form-title">Employee Details</h4>
+                <label for="employeeID" class="label-indexpage">Employee ID</label>
+                <input type="text" name="employeeID" class="inputbox" id="employeeID" placeholder="Example:ZLL008" onblur="employeeIDValidation()" required/>
+                <span class="msg-alert" id="employeeIDAlert">Enter employee ID</span>
 
-                    <label for="dob" class="label-indexpage">Date of Birth</label>
-                    <input type="date" name="dob" class="inputbox" max="2000-01-01" min="1990-01-01" id="dob" onblur="dateOfBirthValidation()"  required/>
-                    <span class="msg-alert" id="dobAlert">Enter your Date of Birth</span>
+                <label for="seatingNumber" class="label-indexpage">Seating Number</label>
+                <input type="text" name="seatingNumber" class="inputbox" id="seatingNumber" maxlength="5" placeholder="Example:018" onblur="seatingNumberValidation()" required/>
+                <span class="msg-alert" id="seatingNumberAlert">Please enter your seating number</span>
 
-                    <label for="address" class="label-indexpage">Address</label>
-                    <input type="text" class="inputbox" name="address" id="address" onblur="addressValidation()" required/>
-                    <span class="msg-alert" id="addressAlert">Enter your address</span>
+                <label for="dob" class="label-indexpage">Date of Birth</label>
+                <input type="date" name="dob" class="inputbox" min="1990-01-01" max="2002-12-20" id="dob" onblur="dateOfBirthValidation()" required/>
+                <span class="msg-alert" id="dobAlert">Enter your Date of Birth</span>
 
-                    <label for="Gender" class="label-indexpage">Gender</label>
-                    <input type="radio" class="radio-btns" name="gender"value="Male"/>
+                <label for="address" class="label-indexpage">Address</label>
+                <input type="text" class="inputbox" name="address" id="address" onblur="addressValidation()" placeholder="Example:19/65 Rose view street,California" required/>
+                <span class="msg-alert" id="addressAlert">Enter your address</span>
+
+                <label for="Gender" class="label-indexpage">Gender</label>
+                <div class="radio-btns">
+                    <input type="radio" class="radio-btns" name="gender" value="Male" required />
                     <label for="male">Male</label>
-                    <input type="radio" class="radio-btns" name="gender" value="Female"/>
+                    <input type="radio" class="radio-btns" name="gender" value="Female" />
                     <label for="female">Female</label>
-                    <input type="radio" class="radio-btns" name="gender" value="Others"/>
+                    <input type="radio" class="radio-btns" name="gender" value="Others" />
                     <label for="others">Others</label>
                     <span class="msg-alert" id="radiobtns-alert">Enter your Gender</span>
+                </div>
+
+                <label for="joiningDate" class="label-indexpage">Date of Joining</label>
+                <input type="date" name="joiningDate" class="inputbox" id="joiningDate" min="2018-01-01" onfocus="fixDate()" onblur="joiningDateValidation()" />
+                <span class="msg-alert" id="joiningDateAlert">Enter your Joining Date</span>
+
+                <h4 class="form-title">Assets Details</h4>
+                <div class="assets-row" id="assets-row">
+                    <div class="label-div">
+                        <label for="model" class="assets-label">Model</label>
+                        <label for="hardwareType" class="assets-label">Hardware</label>
+                        <label for="serialNumber" class="assets-label">Ref ID</label>
+                    </div>
+                    <div id="block-class">
+                        <div id="row" class="container">
+                            <div class="column">
+                                <select id="model" name="model" class="asset-type" required></select>
+                            </div>
+                            <div class="column">
+                                <select id="hardwareType" name="hardwareType" class="asset-type" required></select>
+                            </div>
+                            <div class="column" id="inputTextbox"></div>
+                            <div class="addbtn-removebtn">
+                                <button type="button" class="fa fa-plus" onclick="createElements()"></button>
+                                <button type="button" class="fa fa-minus" id="removebtn" onclick="removeElements(this)"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-                    <label for="joiningDate" class="label-indexpage">Date of Joining</label>
-                    <input type="date" name="joiningDate" class="inputbox" id="joiningDate" onblur="joiningDateValidation()"/>
-                    <span class="msg-alert" id="joiningDateAlert">Enter your Joining Date</span>
-
-                    <h4 class="form-title" id="form-title-page-two">Enter asset details</h4>
-                    <label for="seatingNumber" class="label-indexpage">Seating Number</label>
-                    <input type="text" name="seatingNumber" class="inputbox" id="seatingNumber" maxlength="5" onchange="seatingNumberValidation()" required/>
-                    <span class="msg-alert" id="seatingNumberAlert">Please enter your seating number</span>
-                        
-                        
-                    <label for="laptop" class="label-indexpage">Laptop Number</label>
-                    <input type="text" name="laptop" id="laptopNumber" class="inputbox" onblur="laptopNumberValidation()" required/>
-                    <span class="msg-alert" id="laptopNumberAlert"></span>
-
-                    <label for="monitor" class="label-indexpage">Monitor</label>
-                    <select name="monitor" id="monitor" class="inputbox" required>
-                        <option value="Dell">Dell</option>
-                        <option value="Samsung">Samsung</option>
-                    </select>
-                    <span class="msg-alert" id="LaptopNumberAlert"></span>
-                            
-                            
-                    <h4 class="form-title"  id="form-title">Enter Project details</h4>
-                    <label for="typeOfProject" class="label-indexpage">Type of Project</label>
-                    <input type="text"name="typeOfProject" class="inputbox" id="typeOfProject" onblur="projectTypeValidation()"/>
-                    <span class="msg-alert" id="typeOfProjectAlert"></span>
-                            
-                        <label for="Tools" class="label-indexpage">Tools</label>
-                        <input type="text" name="Tools" class="inputbox" id="Tools" onblur="toolsTypeValidation()"/>
-                        <span class="msg-alert" id="toolaAlert"></span>
 
 
-                        <button type="submit" id="submitButton" class="submit-button">Submit</button>
-                    </form>
-              </div>
-          </div>
+                <h4 class="form-title" id="form-title">Enter Project details</h4>
+                <label for="typeOfProject" class="label-indexpage">Type of Project</label>
+                <input type="text" name="typeOfProject" class="inputbox" id="typeOfProject" onblur="projectTypeValidation()" />
+                <span class="msg-alert" id="typeOfProjectAlert"></span>
+
+                <label for="Tools" class="label-indexpage">Tools</label>
+                <input type="text" name="Tools" class="inputbox" id="Tools" onblur="toolsTypeValidation()" />
+                <span class="msg-alert" id="toolaAlert"></span>
+
+
+                <button type="submit" id="submitButton" class="submit-button" onclick="displayCards()">Submit</button>
+            </form>
+        </div>
+    </div>
     </div>
 </body>
+
+<!-- <label for="laptop" class="assets-label">Hardware Type</label>
+<div class="employee-assets" id="employee-assets">
+    <input type="text" name="laptop" id="laptopNumber" class="assets-inputbox" placeholder="Add your Assets" required/>
+    <button class="fa fa-plus" onclick="createElements()" type="button" id="textboxCreator"></button>
+    <span class="msg-alert" id="laptopNumberAlert"></span>
+</div> -->
+
+<!-- <label for="monitor" class="label-indexpage">Monitor</label>
+<select name="monitor" id="monitor" class="inputbox" required>
+        <option value="Dell">Dell</option>
+        <option value="Samsung">Samsung</option>
+    </select>
+<span class="msg-alert" id="MonitortypeAlert"></span> -->
+
 </html>

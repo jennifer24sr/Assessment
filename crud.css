@@ -1,0 +1,200 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.data-body {
+    background-color: #9b9987;
+}
+
+.cards-grid {
+    display: flex;
+    margin: 5% 2%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex-basis: 25%;
+    border-radius: 5px;
+    background-color: #190b28;
+    margin: 1% 1%;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    background-color: #efa9ae;
+}
+
+.card-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 15px;
+    margin: 5% 10%;
+    color: azure;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+
+.card-name {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.card-email {
+    font-size: 10px;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 10%;
+}
+
+.btn {
+    display: inline;
+    padding: 5px 10px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    background-color: #FFCC00;
+    color: #fff;
+    cursor: pointer;
+}
+
+.del-btn {
+    background-color: #CC3300;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-popup {
+    display: none;
+}
+
+.submit-btn {
+    background-color: aquamarine;
+    color: #CC3300;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+
+.open-button {
+    background-color: #685762;
+    color: white;
+    padding: 16px 10px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    font-size: larger;
+    top: 0px;
+    right: 5px;
+    width: 150px;
+    font-weight: bolder;
+}
+
+.nav-bar {
+    background-color: #685762;
+    font-size: small;
+    padding: 16px 10px;
+    display: flex;
+    color: #fff;
+    justify-content: space-evenly;
+}
+
+
+/* The popup form - hidden by default */
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 5px;
+    left: 25%;
+    right: 25%;
+    z-index: 9;
+    background-color: hsl(54, 9%, 57%);
+}
+
+
+/* Add styles to the form container */
+
+.form-container {
+    margin: 5% 15%;
+    width: 400px;
+    padding: 10px;
+}
+
+
+/* Full-width input fields */
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: hsla(269, 57%, 10%, 0.3);
+    display: block;
+}
+
+::placeholder {
+    color: #ddd;
+}
+
+
+/* When the inputs get focus, do something */
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Set a style for the submit/login button */
+
+.form-container .btn-cls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .btn {
+    background-color: #e55381;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
