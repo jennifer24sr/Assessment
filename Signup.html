@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js"></script>
 </head>
+
 <body class="body">
     <div class="background-styles">
         <div class=" blue-square-left"></div>
@@ -17,30 +19,30 @@
     </div>
     <div class="signup-page">
         <div class="loginpage-image column">
-            <img src="./images/login-page-image-removebg-preview.png" alt="" width="400px" height="350px"/>
+            <img src="./images/login-page-image-removebg-preview.png" alt="" width="400px" height="350px" />
             <h2 class="image-header">Explore the World</h2>
         </div>
         <div class="loginpage-details column">
             <h2 class="form-header">Sign Up</h2>
             <form id="page_one" action="javascript: loadfunc()">
                 <label for="name" class="label">Name</label>
-                <input type="text" class="textbox" name="name" id="name" onchange="nameValidation()" required/>
+                <input type="text" class="textbox" name="name" id="name" onblur="nameValidation()" required/>
                 <span id="namealert" class="alertmsg">Please enter valid name</span>
 
 
                 <label for="email" class="label">Email</label>
-                <input type="email" class="textbox" name="email" id="email" onchange="emailValidation()" required/>
+                <input type="email" class="textbox" name="email" id="email" onblur="emailValidation()" required/>
                 <span id="emailalert" class="alertmsg">Please enter valid email</span>
-                
-                
+
+
                 <label for="password" class="label">Password</label>
-                <input type="password" class="textbox" name="password" id="password" onchange="passwordValidation()" minlength="8" maxlength="16" required/>
+                <input type="password" class="textbox" name="password" id="password" onblur="passwordValidation()" minlength="8" maxlength="16" required/>
                 <span id="passwordalert" class="alertmsg">Please match all the requirements</span>
-                
-                
+
+
                 <label for="passwordConfirmation" class="label">Confirm Password</label>
-                <input type="password" class="textbox" name="passwordConfirmation" id="passwordConfirmation"/>
-                <span id="passwordConfirmationalert" class="alertmsg">Please enter the matching password </span>
+                <input type="password" class="textbox" name="passwordConfirmation" id="passwordConfirmation" onblur="passwordConfirmationValidation()" />
+                <span id="passwordConfirmationalert" class="alertmsg">Password Mismatched</span>
                 <button type="submit" id="submit" class="button">Submit</button>
                 <p class="Signup-option">Already have an account?
                     <a href="login.html" class="sign-in">  Sign In  </a>
@@ -49,5 +51,6 @@
         </div>
     </div>
 </body>
+
 </html>
 <!-- <h4 class="form-title" id="form-title">Enter Employee Details</h4> -->

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="crud.css">
+    <script src="./crud.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="data-body" onload="xmlreq()">
+    <nav class="nav-bar">
+        <h1 class="project-header">Employee Directory</h1>
+        <button class="open-button" onclick="openForm()"><span class="fa fa-plus">  </span> Employee</button>
+    </nav>
+    <div class="form-popup" id="myForm">
+        <form class="form-container">
+
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="formName" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="formEmail" required>
+
+            <div class="btn-cls">
+                <button type="button" class="btn" onclick="postMethod()">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </form>
+    </div>
+    <div class="form-popup" id="Form">
+        <form class="form-container">
+            <label for="id"><b>ID</b></label>
+            <input type="text" name="id" id="userID" disabled />
+
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="UpdateformName" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="UpdateformEmail" required>
+
+            <button type="button" class="btn" onclick="patchMethod()">Update</button>
+            <button type="button" class="btn cancel" onclick="closeupdateForm()">Close</button>
+        </form>
+    </div>
+    <div class="cards-grid" id="cards-grid">
+        <div class="card" id="card">
+            <div class="card-details">
+                <!-- <div>ID</div> -->
+                <div id="myID" class="card-id">Your ID</div>
+            </div>
+            <div class="card-details">
+                <!-- <div>Name</div> -->
+                <div id="name" class="card-name">Your Name</div>
+            </div>
+            <div class="card-details">
+                <!-- <div>Email</div> -->
+                <div id="email" class="card-email">Your Email</div>
+            </div>
+            <div class="card-details">
+                <!-- <div>Gender</div> -->
+                <div id="gender" class="card-gender">Your Gender</div>
+            </div>
+            <div class="card-details">
+                <!-- <div>Status</div> -->
+                <div id="status" class="card-status">Your Status</div>
+            </div>
+            <div class="btns">
+                <button type="button" class="edit-btn btn" onclick="openupdateForm(this)">Edit</button>
+                <button type="button" class="del-btn btn" onclick="deleteMethod(this)">Delete</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
