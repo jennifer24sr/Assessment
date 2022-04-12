@@ -1,5 +1,5 @@
 document.cookie = 'authorization = [eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA]'
-var authorization_token = "Bearer eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA"
+var authorization_token = "Bearer eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2ODczNTcsImlhdCI6MTY0OTY4Mzc1NywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.UA8g7UAHoK6fPXv3tAMFrNZwW2SrPmm10uHS6Ym5xVr375432iTVBEJcj6sBkhJPhK01TbRtoJkQ3soIrjAw4-LltPh4gKR1ZJja2njLr7WvmnTLbykemcEbClL5KHavWVtGZ19vwqOR8Q3Pbsw0nLgCwxUtIgtS9uWWA-NCT-H9WIAHAJ0glrB0KmgmHH0nrZQKaxdQ52YyAPx7FkqumTbxgxpaIFNtBAJa18xiDZuzC_wQezj8SAOr-TPtxv6Xf8ltnidDQ9q_xHlBvYIG-DPtuZGhRM4bLc64ZsoH8MAj7ooJpRu3c97Jf65DtrMcdfv2t6CEbr8zEiIMf3ZNgA";
 
 function getMethod() {
     getMethodForEmployeeName();
@@ -263,45 +263,42 @@ function updateData() {
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("companyId", "14")
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Authorization", "eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA");
+    xhr.setRequestHeader("Authorization", authorization_token);
 
     var data = {
-            "attachments": [],
-            "amount": document.getElementById("Amount").value,
-            "currency": {
-                "currencyCode": document.getElementById("nameOfCurrencyCode").value,
-            },
-            "employee": {
-                "userId": document.getElementById("IDOfEmployee").value,
-            },
-            "paymentType": {
-                "id": 170
-            },
-            "paymentMethod": {
-                "id": 2
-            },
-            "invoiceDate": document.getElementById("dateOfPayment").value,
-            "name": document.getElementById("nameOfExpense").value,
-            "hasImage": true,
-            "imageBase64": "",
-            "isActive": true,
-            "notes": "Test notes",
-            "payoutWithSalary": null,
-            "lineItems": [],
-            "dimensions": []
-        }
-        // employeeName: document.getElementById("nameOfEmployee").value,
-        // expenseName: ,
-        // paymentDate: ,
-        // totalAmount: ,
-        // currencyName: document.getElementById("nameOfCurrency").value,
-        // currencyCode: 
+        "attachments": [],
+        "amount": document.getElementById("Amount").value,
+        "currency": {
+            "currencyCode": document.getElementById("nameOfCurrencyCode").value,
+        },
+        "employee": {
+            "userId": document.getElementById("IDOfEmployee").value,
+        },
+        "paymentType": {
+            "id": 170
+        },
+        "paymentMethod": {
+            "id": 2
+        },
+        "invoiceDate": document.getElementById("dateOfPayment").value,
+        "name": document.getElementById("nameOfExpense").value,
+        "hasImage": true,
+        "imageBase64": "",
+        "isActive": true,
+        "notes": "Test notes",
+        "payoutWithSalary": null,
+        "lineItems": [],
+        "dimensions": []
+    }
     xhr.onreadystatechange = function() {
         if (xhr.status == 200) {
             if (xhr.readyState == 4) {
-                getMethod();
+                // getMethod();
                 closeform();
+                alert("Updated Successfully");
             }
+        } else {
+            alert("Couldn't update content")
         }
     }
     var json = JSON.stringify(data);
@@ -320,7 +317,7 @@ function deleteData(element) {
     xml.setRequestHeader("Accept", "application/json");
     xml.setRequestHeader("companyId", "14")
     xml.setRequestHeader("Content-Type", "application/json");
-    xml.setRequestHeader("Authorization", "eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA");
+    xml.setRequestHeader("Authorization", authorization_token);
     xml.onreadystatechange = function() {
         if (xml.status == 204) {
             if (xml.readyState == 4) {

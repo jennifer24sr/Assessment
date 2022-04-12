@@ -41,7 +41,7 @@ function paymentTypeValidation() {
 }
 
 function paymentMethodValidation() {
-    var paymethod = document.getElementById("paymentMethod");
+    var paymethod = document.getElementById("paymentMethod").value;
     console.log(paymethod);
     if (paymethod == "Select") {
         document.getElementById("paymentMethodAlert").classList.remove("alert-msg")
@@ -57,7 +57,7 @@ function paymentMethodValidation() {
 function paymentDateValidation() {
     var paymentDate = document.getElementById("paymentDate").value;
     console.log(paymentDate)
-    if (paymentDate == null) {
+    if (paymentDate == "") {
         document.getElementById("paymentDateAlert").classList.remove("alert-msg")
         document.getElementById("paymentDateAlert").innerHTML = "Please fill the field";
         document.getElementById("paymentDateAlert").classList.add("show-alert")

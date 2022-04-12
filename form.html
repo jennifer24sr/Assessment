@@ -33,7 +33,7 @@
             <div class="payment-section">
                 <div class="payment">
                     <label for="paymentType" class="form-label">Payment Type</label>
-                    <select id="paymentType" name="paymentType" class="Drop-down">
+                    <select id="paymentType" name="paymentType" class="Drop-down" onblur="paymentTypeValidation()">
                         <option disabled selected>Select</option>
                     </select>
                     <div class="alert-msg" id="paymentTypeAlert"></div>
@@ -41,7 +41,7 @@
                 <div class="payment">
                     <label for="paymentMethod" class="form-label">Payment Method</label>
                     <select id="paymentMethod" name="paymentMethod" class="Drop-down" onblur="paymentMethodValidation()">
-                        <option disabled selected onblur="paymentTypeValidation()">Select</option>
+                        <option disabled selected>Select</option>
                     </select>
                     <div class="alert-msg" id="paymentMethodAlert"></div>
                 </div>
