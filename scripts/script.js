@@ -1,11 +1,127 @@
 document.cookie = 'authorization = [eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA]'
 var authorization_token = "Bearer eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA"
 
+function employeeNameValidation() {
+    var employeeValue = document.getElementById("employee").value;
+    console.log(employeeValue)
+    if (employeeValue == "Select") {
+        document.getElementById("employeeAlert").classList.remove("alert-msg")
+        document.getElementById("employeeAlert").innerHTML = "Please select a option";
+        document.getElementById("employeeAlert").classList.add("show-alert")
+        return true
+    } else {
+        document.getElementById("employee").style.border == "1px solid green";
+        document.getElementById("employeeAlert").classList.remove("show-alert")
+        document.getElementById("employeeAlert").classList.add("alert-msg")
+        return false
+    }
+}
+
+function expenseNameValidation() {
+    var expenseName = document.getElementById("ExpenseName").value;
+    console.log(expenseName);
+    if (expenseName == "") {
+        document.getElementById("expenseAlert").classList.remove("alert-msg")
+        document.getElementById("expenseAlert").innerHTML = "Please fill the field";
+        document.getElementById("expenseAlert").classList.add("show-alert")
+        return true
+    } else {
+        document.getElementById("ExpenseName").style.border == "1px solid green";
+        document.getElementById("expenseAlert").classList.remove("show-alert")
+        document.getElementById("expenseAlert").classList.add("alert-msg")
+        return false
+    }
+}
+
+function paymentTypeValidation() {
+    var paymentType = document.getElementById("paymentType").value;
+    console.log(paymentType);
+    if (paymentType == "Select") {
+        document.getElementById("paymentTypeAlert").classList.remove("alert-msg")
+        document.getElementById("paymentTypeAlert").innerHTML = "Please select a option";
+        document.getElementById("paymentTypeAlert").classList.add("show-alert")
+        return true
+    } else {
+        document.getElementById("paymentType").style.border == "1px solid green";
+        document.getElementById("paymentTypeAlert").classList.remove("show-alert")
+        document.getElementById("paymentTypeAlert").classList.add("alert-msg")
+        return false
+    }
+}
+
+function paymentMethodValidation() {
+    var paymethod = document.getElementById("paymentMethod");
+    console.log(paymethod);
+    if (paymethod == "Select") {
+        document.getElementById("paymentMethodAlert").classList.remove("alert-msg")
+        document.getElementById("paymentMethodAlert").innerHTML = "Please select a option";
+        document.getElementById("paymentMethodAlert").classList.add("show-alert")
+        return true
+    } else {
+        document.getElementById("paymentMethod").style.border == "1px solid green";
+        document.getElementById("paymentMethodAlert").classList.remove("show-alert")
+        document.getElementById("paymentMethodAlert").classList.add("alert-msg")
+        return false
+    }
+}
+
+function paymentDateValidation() {
+    var paymentDate = document.getElementById("paymentDate").value;
+    console.log(paymentDate)
+    if (paymentDate == null) {
+        document.getElementById("paymentDateAlert").classList.remove("alert-msg")
+        document.getElementById("paymentDateAlert").innerHTML = "Please fill the field";
+        document.getElementById("paymentDateAlert").classList.add("show-alert")
+        return true
+    } else {
+        document.getElementById("paymentDate").style.border == "1px solid green";
+        document.getElementById("paymentDateAlert").classList.remove("show-alert")
+        document.getElementById("paymentDateAlert").classList.add("alert-msg")
+        return false
+    }
+}
+
+function totalAmtValidation() {
+    var totAmt = document.getElementById("totalAmt").value;
+    console.log(totAmt)
+    if (totAmt == 0 || totAmt == 0.00) {
+        document.getElementById("totalAmtAlert").classList.remove("alert-msg")
+        document.getElementById("totalAmtAlert").innerHTML = "Please fill the field";
+        document.getElementById("totalAmtAlert").classList.add("show-alert")
+        return true
+    } else {
+        document.getElementById("totalAmt").style.border == "1px solid green";
+        document.getElementById("totalAmtAlert").classList.remove("show-alert")
+        document.getElementById("totalAmtAlert").classList.add("alert-msg")
+        return false
+    }
+}
+
+function currencyValidation() {
+    var currency = document.getElementById("currency").value;
+    console.log(currency);
+    if (currency == "Select") {
+        document.getElementById("currencyAlert").classList.remove("alert-msg")
+        document.getElementById("currencyAlert").innerHTML = "Please fill the field";
+        document.getElementById("currencyAlert").classList.add("show-alert")
+        return true
+    } else {
+        document.getElementById("currency").style.border == "1px solid green";
+        document.getElementById("currencyAlert").classList.remove("show-alert")
+        document.getElementById("currencyAlert").classList.add("alert-msg")
+        return false
+    }
+}
+
 function getMethod() {
-    getMethodForEmployeeName();
-    getMethodForPaymentType();
-    getMethodForPaymentMethod();
-    getMethodForCurrency();
+    if (employeeNameValidation() && expenseNameValidation() && paymentTypeValidation() && paymentMethodValidation() && paymentDateValidation() && totalAmtValidation() && currencyValidation()) {
+        getMethodForEmployeeName();
+        getMethodForPaymentType();
+        getMethodForPaymentMethod();
+        getMethodForCurrency();
+    } else {
+        alert("Please fill all mandatory fields");
+    }
 }
 
 function getMethodForEmployeeName() {
@@ -266,36 +382,30 @@ function updateData() {
     xhr.setRequestHeader("Authorization", "eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA");
 
     var data = {
-            "attachments": [],
-            "amount": document.getElementById("Amount").value,
-            "currency": {
-                "currencyCode": document.getElementById("nameOfCurrencyCode").value,
-            },
-            "employee": {
-                "userId": document.getElementById("IDOfEmployee").value,
-            },
-            "paymentType": {
-                "id": 170
-            },
-            "paymentMethod": {
-                "id": 2
-            },
-            "invoiceDate": document.getElementById("dateOfPayment").value,
-            "name": document.getElementById("nameOfExpense").value,
-            "hasImage": true,
-            "imageBase64": "",
-            "isActive": true,
-            "notes": "Test notes",
-            "payoutWithSalary": null,
-            "lineItems": [],
-            "dimensions": []
-        }
-        // employeeName: document.getElementById("nameOfEmployee").value,
-        // expenseName: ,
-        // paymentDate: ,
-        // totalAmount: ,
-        // currencyName: document.getElementById("nameOfCurrency").value,
-        // currencyCode: 
+        "attachments": [],
+        "amount": document.getElementById("Amount").value,
+        "currency": {
+            "currencyCode": document.getElementById("nameOfCurrencyCode").value,
+        },
+        "employee": {
+            "userId": document.getElementById("IDOfEmployee").value,
+        },
+        "paymentType": {
+            "id": 170
+        },
+        "paymentMethod": {
+            "id": 2
+        },
+        "invoiceDate": document.getElementById("dateOfPayment").value,
+        "name": document.getElementById("nameOfExpense").value,
+        "hasImage": true,
+        "imageBase64": "",
+        "isActive": true,
+        "notes": "Test notes",
+        "payoutWithSalary": null,
+        "lineItems": [],
+        "dimensions": []
+    }
     xhr.onreadystatechange = function() {
         if (xhr.status == 200) {
             if (xhr.readyState == 4) {
