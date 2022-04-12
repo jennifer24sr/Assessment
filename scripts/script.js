@@ -293,7 +293,7 @@ function updateData() {
     xhr.onreadystatechange = function() {
         if (xhr.status == 200) {
             if (xhr.readyState == 4) {
-                // getMethod();
+                getData();
                 closeform();
                 alert("Updated Successfully");
             }
@@ -322,7 +322,7 @@ function deleteData(element) {
         if (xml.status == 204) {
             if (xml.readyState == 4) {
                 alert("Deleted Successfully");
-                getMethod();
+                getData();
             }
 
         } else {
