@@ -5,10 +5,12 @@ function employeeNameValidation() {
         document.getElementById("employeeAlert").classList.remove("alert-msg")
         document.getElementById("employeeAlert").innerHTML = "Please select a option";
         document.getElementById("employeeAlert").classList.add("show-alert")
+        return true
     } else {
         document.getElementById("employee").style.border == "1px solid green";
         document.getElementById("employeeAlert").classList.remove("show-alert")
         document.getElementById("employeeAlert").classList.add("alert-msg")
+        return false
     }
 }
 
@@ -19,10 +21,12 @@ function expenseNameValidation() {
         document.getElementById("expenseAlert").classList.remove("alert-msg")
         document.getElementById("expenseAlert").innerHTML = "Please fill the field";
         document.getElementById("expenseAlert").classList.add("show-alert")
+        return true
     } else {
         document.getElementById("ExpenseName").style.border == "1px solid green";
         document.getElementById("expenseAlert").classList.remove("show-alert")
         document.getElementById("expenseAlert").classList.add("alert-msg")
+        return false
     }
 }
 
@@ -33,10 +37,12 @@ function paymentTypeValidation() {
         document.getElementById("paymentTypeAlert").classList.remove("alert-msg")
         document.getElementById("paymentTypeAlert").innerHTML = "Please select a option";
         document.getElementById("paymentTypeAlert").classList.add("show-alert")
+        return true
     } else {
         document.getElementById("paymentType").style.border == "1px solid green";
         document.getElementById("paymentTypeAlert").classList.remove("show-alert")
         document.getElementById("paymentTypeAlert").classList.add("alert-msg")
+        return false
     }
 }
 
@@ -47,10 +53,12 @@ function paymentMethodValidation() {
         document.getElementById("paymentMethodAlert").classList.remove("alert-msg")
         document.getElementById("paymentMethodAlert").innerHTML = "Please select a option";
         document.getElementById("paymentMethodAlert").classList.add("show-alert")
+        return true
     } else {
         document.getElementById("paymentMethod").style.border == "1px solid green";
         document.getElementById("paymentMethodAlert").classList.remove("show-alert")
         document.getElementById("paymentMethodAlert").classList.add("alert-msg")
+        return false
     }
 }
 
@@ -61,10 +69,12 @@ function paymentDateValidation() {
         document.getElementById("paymentDateAlert").classList.remove("alert-msg")
         document.getElementById("paymentDateAlert").innerHTML = "Please fill the field";
         document.getElementById("paymentDateAlert").classList.add("show-alert")
+        return true
     } else {
         document.getElementById("paymentDate").style.border == "1px solid green";
         document.getElementById("paymentDateAlert").classList.remove("show-alert")
         document.getElementById("paymentDateAlert").classList.add("alert-msg")
+        return false
     }
 }
 
@@ -75,10 +85,12 @@ function totalAmtValidation() {
         document.getElementById("totalAmtAlert").classList.remove("alert-msg")
         document.getElementById("totalAmtAlert").innerHTML = "Please fill the field";
         document.getElementById("totalAmtAlert").classList.add("show-alert")
+        return true
     } else {
         document.getElementById("totalAmt").style.border == "1px solid green";
         document.getElementById("totalAmtAlert").classList.remove("show-alert")
         document.getElementById("totalAmtAlert").classList.add("alert-msg")
+        return false
     }
 }
 
@@ -89,9 +101,11 @@ function currencyValidation() {
         document.getElementById("currencyAlert").classList.remove("alert-msg")
         document.getElementById("currencyAlert").innerHTML = "Please fill the field";
         document.getElementById("currencyAlert").classList.add("show-alert")
+        return true
     } else {
         document.getElementById("currency").style.border == "1px solid green";
         document.getElementById("currencyAlert").classList.remove("show-alert")
         document.getElementById("currencyAlert").classList.add("alert-msg")
+        return false
     }
 }
