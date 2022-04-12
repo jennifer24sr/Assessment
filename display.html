@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Data</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./scripts/script.js"></script>
+</head>
+
+<body onload="getData()" class="data-body">
+    <div class="edit-form">
+        <form class="edit-Data" id="editData">
+            <div class="close-btn" onclick="closeform()">&times;</div>
+            <label class="editDataLabel">Employee ID</label>
+            <input type="text" id="IDOfEmployee" name="employeeID" class="editTextBox" disabled/>
+            <label class="editDataLabel">Employee</label>
+            <input type="text" id="nameOfEmployee" name="employeeName" class="editTextBox" />
+            <label class="editDataLabel">Expense ID</label>
+            <input type="text" id="IDOfExpense" name="expenseID" class="editTextBox" disabled />
+            <label class="editDataLabel">Expense Name</label>
+            <input type="text" id="nameOfExpense" name="expenseName" class="editTextBox" />
+            <label class="editDataLabel">Payment Date</label>
+            <input type="text" id="dateOfPayment" name="date-payment" class="editTextBox" />
+            <label class="editDataLabel">Total</label>
+            <input type="text" id="Amount" name="total-amt" class="editTextBox" />
+            <label class="editDataLabel">Currency Name</label>
+            <input type="text" id="nameOfCurrency" name="name-currency" class="editTextBox" />
+            <label class="editDataLabel">Currency Code</label>
+            <input type="text" id="nameOfCurrencyCode" name="code-currency" class="editTextBox" />
+            <div class="form-btns">
+                <button type="button" class="btn update-btn" onclick="updateData()">Update</button>
+            </div>
+        </form>
+    </div>
+    <div class="cards-grid" id="cardGrid">
+        <div class="card-container" id="cardContainer">
+
+            <div class="card-details">
+                <div class="card-key">Employee ID</div>
+                <div class="card-value" id="postedEmployeeID">Hello</div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Employee</div>
+                <div class="card-value" id="postedEmployeeName">Hello</div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Expense ID</div>
+                <div class="card-value" id="postedExpenseID">Hello</div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Expense Name</div>
+                <div class="card-value" id="postedExpense">23456</div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Payment Date</div>
+                <div class="card-value" id="postedPaymentDate">2345678</div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Total</div>
+                <div class="card-value" id="postedTotalAmt">234567</div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Currency Name</div>
+                <div class="card-value" id="postedCurrencyName">2345678</div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Currency Code</div>
+                <div class="card-value" id="postedCurrencyCode">2345678</div>
+            </div>
+            <div class="form-btns">
+                <button type="button" id="edit-btn" class="form-btn edit-btn" onclick="openForm(this)">Edit</button>
+                <button type="button" id="delete-btn" class="form-btn delete-btn" onclick="deleteData(this)">Delete</button>
+                <button type="button" id="accept-btn" class="form-btn accept-btn">Accept</button>
+                <button type="button" id="reject-btn" class="form-btn reject-btn">Reject</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- <div class="card-details">
+    <div class="card-key">Payment Type</div>
+    <div class="card-value" id="postedPaymentType">yuio</div>
+</div> -->
+<!-- <div class="card-details">
+    <div class="card-key">Payment Method</div>
+    <div class="card-value" id="postedPaymentMethod">2345678</div>
+</div> -->
+<!-- <div class="card-details">
+    <div class="card-key">Payout with salary</div>
+    <div class="card-value" id="postedPayoutDetails">asdf</div>
+</div> -->
