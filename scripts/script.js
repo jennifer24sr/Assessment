@@ -114,14 +114,10 @@ function currencyValidation() {
 }
 
 function getMethod() {
-    if (employeeNameValidation() && expenseNameValidation() && paymentTypeValidation() && paymentMethodValidation() && paymentDateValidation() && totalAmtValidation() && currencyValidation()) {
-        getMethodForEmployeeName();
-        getMethodForPaymentType();
-        getMethodForPaymentMethod();
-        getMethodForCurrency();
-    } else {
-        alert("Please fill all mandatory fields");
-    }
+    getMethodForEmployeeName();
+    getMethodForPaymentType();
+    getMethodForPaymentMethod();
+    getMethodForCurrency();
 }
 
 function getMethodForEmployeeName() {
@@ -445,3 +441,4 @@ function deleteData(element) {
     }
     xml.send();
 }
+//if (employeeNameValidation() && expenseNameValidation() && paymentTypeValidation() && paymentMethodValidation() && paymentDateValidation() && totalAmtValidation() && currencyValidation()) {
