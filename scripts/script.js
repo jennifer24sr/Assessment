@@ -269,16 +269,16 @@ function postMethod() {
 
     var postData = JSON.stringify(postDetails);
     xhttp.onreadystatechange = function() {
-        if (xhttp.status == 200) {
-            if (xhttp.readyState == 4) {
+        if (xhttp.readyState == 4) {
+            if (xhttp.status == 200) {
                 var request = JSON.parse(xhttp.responseText);
                 console.log(request);
                 console.log(request.expense["employee"].name);
                 window.location.href = "http://localhost/expense/display.html";
 
+            } else {
+                alert("Error");
             }
-        } else {
-            alert("Error");
         }
     }
     xhttp.send(postData);
@@ -297,6 +297,7 @@ function getData() {
         console.log(json.expenses[0].employee["name"]);
         console.log(json.expenses[0].name)
         console.log(json.expenses[0].amount)
+        document.getElementById("cardGrid").innerHTML = "";
         for (let i = 0; i < json.expenses.length; i++) {
             document.getElementById("postedEmployeeID").innerHTML = json.expenses[i].employee["userId"];
             document.getElementById("postedEmployeeName").innerHTML = json.expenses[i].employee["name"];
@@ -308,6 +309,7 @@ function getData() {
             document.getElementById("postedCurrencyCode").innerHTML = json.expenses[i].currency["currencyCode"];
             var items = document.getElementById("cardContainer");
             var clone = items.cloneNode(true);
+            clone.style.display = "block";
             document.getElementById("cardGrid").appendChild(clone);
         }
 
@@ -323,46 +325,30 @@ function openForm(element) {
 }
 
 function closeform() {
-    var closeform = document.getElementById("editData");
+    var closeform = document.getElementById("updateExpenseForm");
     closeform.style.display = "none";
+}
+
+function closeUpdateForm() {
+    var closeUpdateForm = getElementById("updateExpenseForm");
+    closeUpdateForm.style.display = "none";
 }
 
 function editData(element) {
     console.log(element);
     var parent = element.parentNode.parentNode;
     console.log(parent);
-    var employeeID = parent.children[0];
-    var employeeIDInForm = employeeID.children[1].innerHTML;
-    document.getElementById("IDOfEmployee").value = employeeIDInForm;
-
-    var employeeName = parent.children[1];
-    var employeeInForm = employeeName.children[1].innerHTML;
-    document.getElementById("nameOfEmployee").value = employeeInForm;
-
     var expenseID = parent.children[2];
     var expenseIDInForm = expenseID.children[1].innerHTML;
-    document.getElementById("IDOfExpense").value = expenseIDInForm;
-
-    var expenseName = parent.children[3];
-    var expenseNameInForm = expenseName.children[1].innerHTML;
-    document.getElementById("nameOfExpense").value = expenseNameInForm;
-
-    var paymentDate = parent.children[4];
-    var paymentDateInForm = paymentDate.children[1].innerHTML;
-    document.getElementById("dateOfPayment").value = paymentDateInForm;
-
-    var totalAmount = parent.children[5];
-    var totalAmountInForm = totalAmount.children[1].innerHTML;
-    document.getElementById("Amount").value = totalAmountInForm;
-
-    var currencyName = parent.children[6];
-    var currencyNameInForm = currencyName.children[1].innerHTML;
-    console.log(currencyNameInForm)
-    document.getElementById("nameOfCurrency").value = currencyNameInForm;
-
-    var currencyCode = parent.children[7];
-    var currencyCodeInForm = currencyCode.children[1].innerHTML;
-    document.getElementById("nameOfCurrencyCode").value = currencyCodeInForm;
+    console.log(expenseIDInForm);
+    var url = "http://localhost/ec/expenses/" + expenseIDInForm;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "url", true);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("companyId", "14")
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("Authorization", "eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA");
+    getMethod();
 }
 
 function updateData() {
@@ -405,8 +391,9 @@ function updateData() {
     xhr.onreadystatechange = function() {
         if (xhr.status == 200) {
             if (xhr.readyState == 4) {
-                getMethod();
                 closeform();
+                getData();
+                alert("Updated Successfully");
             }
         }
     }
@@ -428,10 +415,10 @@ function deleteData(element) {
     xml.setRequestHeader("Content-Type", "application/json");
     xml.setRequestHeader("Authorization", "eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA");
     xml.onreadystatechange = function() {
-        if (xml.status == 204) {
+        if (xml.status == 200) {
             if (xml.readyState == 4) {
                 alert("Deleted Successfully");
-                getMethod();
+                getData();
             }
 
         } else {
@@ -442,3 +429,33 @@ function deleteData(element) {
     xml.send();
 }
 //if (employeeNameValidation() && expenseNameValidation() && paymentTypeValidation() && paymentMethodValidation() && paymentDateValidation() && totalAmtValidation() && currencyValidation()) {
+// var employeeID = parent.children[0];
+// var employeeIDInForm = employeeID.children[1].innerHTML;
+// document.getElementById("IDOfEmployee").value = employeeIDInForm;
+
+// var employeeName = parent.children[1];
+// var employeeInForm = employeeName.children[1].innerHTML;
+// document.getElementById("nameOfEmployee").value = employeeInForm;
+
+// document.getElementById("IDOfExpense").value = expenseIDInForm;
+
+// var expenseName = parent.children[3];
+// var expenseNameInForm = expenseName.children[1].innerHTML;
+// document.getElementById("nameOfExpense").value = expenseNameInForm;
+
+// var paymentDate = parent.children[4];
+// var paymentDateInForm = paymentDate.children[1].innerHTML;
+// document.getElementById("dateOfPayment").value = paymentDateInForm;
+
+// var totalAmount = parent.children[5];
+// var totalAmountInForm = totalAmount.children[1].innerHTML;
+// document.getElementById("Amount").value = totalAmountInForm;
+
+// var currencyName = parent.children[6];
+// var currencyNameInForm = currencyName.children[1].innerHTML;
+// console.log(currencyNameInForm)
+// document.getElementById("nameOfCurrency").value = currencyNameInForm;
+
+// var currencyCode = parent.children[7];
+// var currencyCodeInForm = currencyCode.children[1].innerHTML;
+// document.getElementById("nameOfCurrencyCode").value = currencyCodeInForm;
