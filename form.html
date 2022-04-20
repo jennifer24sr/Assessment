@@ -8,67 +8,62 @@
     <title>Create Expense</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./scripts/script.js"></script>
-    <script src="./scripts/validation.js"></script>
 </head>
 
 <body class="body-section" onload="getMethod()">
     <nav class="nav-bar">
-        <h1 class="navbar-header">Create Expenses</h1>
+        <h1 class="navbar-header">Create Expense</h1>
         <div class="btns-grp">
-            <button class="nav-btn save-btn" id="saveBtn" onclick="postMethod()">Save</button>
-            <button class="nav-btn cancel-btn" id="cancelBtn">Cancel</button>
+            <button class="nav-btn save-btn" id="saveBtn" onclick="checkFormValidity()">Save</button>
+            <button class="nav-btn cancel-btn" id="cancelBtn" onclick="viewExpenses()">Cancel</button>
         </div>
     </nav>
     <div class="form-container">
         <h3 class="form-title">Expense Claim Details</h3>
         <form name="expenseForm" id="createExpenseForm" class="form-content">
             <label for="Employee" class="form-label">Employee <span class="required-star">*</span></label>
-            <select id="employee" name="Employee" class="Drop-down" required onblur="employeeNameValidation()">
+            <select id="employee" name="Employee" class="Drop-down" onblur="employeeNameValidation()" required>
                 <option disabled selected>Select</option>
             </select>
             <div class="alert-msg" id="employeeAlert"></div>
             <label for="ExpenseName" class="form-label">Expense Name <span class="required-star">*</span></label>
-            <input type="text" id="ExpenseName" name="ExpenseName" onblur="expenseNameValidation()" placeholder="Expense Name" class="input-textbox" required />
+            <input type="text" id="ExpenseName" name="ExpenseName" placeholder="Expense Name" class="input-textbox" onblur="expenseNameValidation()" required />
             <div class="alert-msg" id="expenseAlert"></div>
-            <div class="payment-section">
-                <div class="payment">
-                    <label for="paymentType" class="form-label">Payment Type</label>
-                    <select id="paymentType" name="paymentType" class="Drop-down">
-                        <option disabled selected>Select</option>
-                    </select>
-                    <div class="alert-msg" id="paymentTypeAlert"></div>
-                </div>
-                <div class="payment">
-                    <label for="paymentMethod" class="form-label">Payment Method</label>
-                    <select id="paymentMethod" name="paymentMethod" class="Drop-down" onblur="paymentMethodValidation()">
-                        <option disabled selected onblur="paymentTypeValidation()">Select</option>
-                    </select>
-                    <div class="alert-msg" id="paymentMethodAlert"></div>
-                </div>
-            </div>
+            <label for="paymentType" class="form-label">Payment Type</label>
+            <select id="paymentType" name="paymentType" class="Drop-down" onblur="paymentTypeValidation()">
+                <option disabled selected>Select</option>
+            </select>
+            <div class="alert-msg" id="paymentTypeAlert"></div>
+            <label for="paymentMethod" class="form-label">Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" class="Drop-down" onblur="paymentMethodValidation()">
+                <option disabled selected>Select</option>
+            </select>
+            <div class="alert-msg" id="paymentMethodAlert"></div>
             <div class="payment-style">
                 <div class="payment">
                     <label for="paymentDate" class="form-label">Payment Date</label>
-                    <input type="date" id="paymentDate" name="paymentDate" class="input-textbox" onblur="paymentDateValidation()" max="2022-04-13" />
+                    <input type="date" id="paymentDate" name="paymentDate" class="input-textbox" onfocus="setMaxdate()" min="2020-01-01" onblur="paymentDateValidation()" required />
                     <div class="alert-msg" id="paymentDateAlert"></div>
                 </div>
                 <div class="payment">
-                    <label for="payoutWithSalary" class="form-label">Payout With Salary</label>
                     <input type="checkbox" id="payoutWithSalary" name="payoutWithSalary" class="input-checkbox" />
+                    <label for="payoutWithSalary" class="checkbox-label">Payout With Salary</label>
                 </div>
-                <div class="currency-section">
-                    <div class="payment">
-                        <label for="totalAmt" class="form-label">Total</label>
-                        <input type="text" name="totalAmt" id="totalAmt" class="input-textbox" onblur="totalAmtValidation()" value="0.00" required />
-                        <div class="alert-msg" id="totalAmtAlert"></div>
-                    </div>
-                    <div class="payment">
-                        <label for="currency" class="form-label">Currency</label>
-                        <select name="currency" id="currency" class="Drop-down" onblur="currencyValidation()" required>
+            </div>
+            <label for="notes" class="form-label">Notes</label>
+            <input type="text" name="notesField" id="notesField" class="input-textbox" />
+            <div class="currency-section">
+                <div class="payments">
+                    <label for="totalAmt" class="form-label">Total <span class="required-star">*</span></label>
+                    <input type="text" name="totalAmt" id="totalAmt" class="input-textbox" value="0.00" onblur="totalAmtValidation()" required />
+                    <div class="alert-msg" id="totalAmtAlert"></div>
+                </div>
+                <div class="payments">
+                    <label for="currency" class="form-label">Currency <span class="required-star">*</span></label>
+                    <select name="currency" id="currency" class="Drop-down" onblur="currencyValidation()" required>
                             <option disabled selected>Select</option>
                         </select>
-                        <div class="alert-msg" id="currencyAlert"></div>
-                    </div>
+                    <div class="alert-msg" id="currencyAlert"></div>
                 </div>
             </div>
         </form>

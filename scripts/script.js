@@ -1,6 +1,7 @@
 document.cookie = 'authorization = [eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA]'
 var authorization_token = "Bearer eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA"
 
+
 function employeeNameValidation() {
     var employeeValue = document.getElementById("employee").value;
     console.log(employeeValue)
@@ -18,6 +19,7 @@ function employeeNameValidation() {
 }
 
 function expenseNameValidation() {
+    var expenseNamePattern = /^[A-z0-9]{3,15}$/
     var expenseName = document.getElementById("ExpenseName").value;
     console.log(expenseName);
     if (expenseName == "") {
@@ -25,11 +27,19 @@ function expenseNameValidation() {
         document.getElementById("expenseAlert").innerHTML = "Please fill the field";
         document.getElementById("expenseAlert").classList.add("show-alert")
         return true
-    } else {
-        document.getElementById("ExpenseName").style.border == "1px solid green";
-        document.getElementById("expenseAlert").classList.remove("show-alert")
-        document.getElementById("expenseAlert").classList.add("alert-msg")
-        return false
+    } else if (expenseName != "") {
+        if (expenseNamePattern.test(expenseName)) {
+            console.log(expenseNamePattern.test(expenseName))
+            document.getElementById("ExpenseName").style.border == "1px solid green";
+            document.getElementById("expenseAlert").classList.remove("show-alert")
+            document.getElementById("expenseAlert").classList.add("alert-msg")
+        } else {
+            document.getElementById("ExpenseName").style.border == "1px solid red";
+            document.getElementById("expenseAlert").classList.remove("alertmsg");
+            document.getElementById("expenseAlert").classList.add("show-alert")
+            document.getElementById("expenseAlert").innerHTML = "Value must be in alphanumeric format";
+            return false
+        }
     }
 }
 
@@ -50,12 +60,12 @@ function paymentTypeValidation() {
 }
 
 function paymentMethodValidation() {
-    var paymethod = document.getElementById("paymentMethod");
+    var paymentmethod = document.getElementById("paymentMethod").value;
     console.log(paymethod);
-    if (paymethod == "Select") {
+    if (paymentmethod == "Select") {
         document.getElementById("paymentMethodAlert").classList.remove("alert-msg")
-        document.getElementById("paymentMethodAlert").innerHTML = "Please select a option";
         document.getElementById("paymentMethodAlert").classList.add("show-alert")
+        document.getElementById("paymentMethodAlert").innerHTML = "Please select a option";
         return true
     } else {
         document.getElementById("paymentMethod").style.border == "1px solid green";
@@ -84,9 +94,9 @@ function paymentDateValidation() {
 function totalAmtValidation() {
     var totAmt = document.getElementById("totalAmt").value;
     console.log(totAmt)
-    if (totAmt == 0 || totAmt == 0.00) {
+    if (totAmt <= 0) {
         document.getElementById("totalAmtAlert").classList.remove("alert-msg")
-        document.getElementById("totalAmtAlert").innerHTML = "Please fill the field";
+        document.getElementById("totalAmtAlert").innerHTML = "Total amount cannot be zero or less than 0";
         document.getElementById("totalAmtAlert").classList.add("show-alert")
         return true
     } else {
@@ -111,6 +121,26 @@ function currencyValidation() {
         document.getElementById("currencyAlert").classList.add("alert-msg")
         return false
     }
+}
+
+function viewExpenses() {
+    window.location.href = "http://localhost/expense/display.html";
+}
+
+function setMaxdate() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("paymentDate").setAttribute("max", today);
 }
 
 function getMethod() {
@@ -229,6 +259,16 @@ function getMethodForCurrency() {
 
 }
 //Post Method
+
+function checkFormValidity() {
+    var validation = document.getElementById("createExpenseForm");
+    if (validation.checkValidity() == true) {
+        postMethod();
+    } else {
+        alert("Please fill all fields");
+    }
+}
+
 function postMethod() {
     function payoutWithSalarybox() {
         if (document.getElementById("payoutWithSalary").checked) {
@@ -239,6 +279,8 @@ function postMethod() {
             return false;
         }
     }
+    var expenseName = document.getElementById("ExpenseName").value;
+    var updatedExpenseName = expenseName.capitalize();
     var postDetails = {
         "attachments": [],
         "amount": document.getElementById("totalAmt").value,
@@ -255,8 +297,8 @@ function postMethod() {
             "id": document.getElementById("paymentMethod").value,
         },
         "invoiceDate": document.getElementById("paymentDate").value,
-        "name": document.getElementById("ExpenseName").value,
-        "notes": "",
+        "name": updatedExpenseName,
+        "notes": document.getElementById("notesField").value,
         "payoutWithSalary": payoutWithSalarybox(),
         "lineItems": [],
         "dimensions": []
@@ -294,23 +336,34 @@ function getData() {
         console.log(this.responseText);
         var json = JSON.parse(this.responseText);
         console.log(json);
-        console.log(json.expenses[0].employee["name"]);
+        console.log(json.expenses[0].employee["userId"]);
         console.log(json.expenses[0].name)
         console.log(json.expenses[0].amount)
-        document.getElementById("cardGrid").innerHTML = "";
-        for (let i = 0; i < json.expenses.length; i++) {
+            // document.getElementById("cardGrid").innerHTML = "";
+        for (let i = 1; i < json.expenses.length; i++) {
             document.getElementById("postedEmployeeID").innerHTML = json.expenses[i].employee["userId"];
             document.getElementById("postedEmployeeName").innerHTML = json.expenses[i].employee["name"];
             document.getElementById("postedExpenseID").innerHTML = json.expenses[i].id;
             document.getElementById("postedExpense").innerHTML = json.expenses[i].name;
             document.getElementById("postedTotalAmt").innerHTML = json.expenses[i].amount;
-            document.getElementById("postedPaymentDate").innerHTML = json.expenses[i].invoiceDate;
-            document.getElementById("postedCurrencyName").innerHTML = json.expenses[i].currency["currencyName"];
+            //Date Formatting
+            var date = json.expenses[i].invoiceDate;
+            var split = date.split("T");
+            var splitDate = split[0];
+            var dateArray = splitDate.split("-");
+            console.log(dateArray);
+            var formattedDate = dateArray[2] + "-" + dateArray[1] + "-" + dateArray[0];
+            document.getElementById("postedPaymentDate").innerHTML = formattedDate;
+            // document.getElementById("postedCurrencyName").innerHTML = json.expenses[i].currency["currencyName"];
             document.getElementById("postedCurrencyCode").innerHTML = json.expenses[i].currency["currencyCode"];
+            document.getElementById("postedNotes").innerHTML = json.expenses[i].notes;
             var items = document.getElementById("cardContainer");
             var clone = items.cloneNode(true);
             clone.style.display = "block";
             document.getElementById("cardGrid").appendChild(clone);
+            var changeColor = document.getElementById("cardHeader");
+            randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0').toUpperCase();
+            changeColor.style.backgroundColor = randomColor;
         }
 
     }
@@ -319,40 +372,74 @@ function getData() {
 }
 
 function openForm(element) {
-    var openForm = document.getElementById("editData");
+    var openForm = document.getElementById("expenseForm");
     openForm.style.display = "block";
     editData(element);
 }
 
 function closeform() {
-    var closeform = document.getElementById("updateExpenseForm");
+    var closeform = document.getElementById("expenseForm");
     closeform.style.display = "none";
-}
-
-function closeUpdateForm() {
-    var closeUpdateForm = getElementById("updateExpenseForm");
-    closeUpdateForm.style.display = "none";
 }
 
 function editData(element) {
     console.log(element);
     var parent = element.parentNode.parentNode;
-    console.log(parent);
-    var expenseID = parent.children[2];
-    var expenseIDInForm = expenseID.children[1].innerHTML;
+    var expenseIDInForm = parent.children[2].innerHTML;
     console.log(expenseIDInForm);
     var url = "http://localhost/ec/expenses/" + expenseIDInForm;
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "url", true);
+    xhr.open("GET", url, true);
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("companyId", "14")
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Authorization", "eyJraWQiOiJhZm5VVTd6STJzdk1ISEcydkl3eE44enlxU0NXck1NNSttUDUxYTZcL0Uydz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJhdWQiOiI3dDgwNzYzN3Q5bmdwYmI1ZHZrOWIwbXV0NSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6ImExM2FkYzM0LWQ3ZDgtNDAwNy04ZDRlLTNmMDc3MjBkM2Y5YyIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQ5NjU0Njg2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtbm9ydGgtMS5hbWF6b25hd3MuY29tXC9ldS1ub3J0aC0xXzZzMGFMblZFRSIsImNvZ25pdG86dXNlcm5hbWUiOiJjNzRjYjg0OS0xNDQ5LTQ0YWUtYmU3YS0wNGU0OTRhNDczYmIiLCJleHAiOjE2NDk2NzMzMzMsImlhdCI6MTY0OTY2OTczMywiZW1haWwiOiJnb3V0aGFtQHppcml1cy5pbiJ9.o_xe0uJ63JRIIwwA0gHbXR185hWOwo_vm40zIDRWiGRgIEJLLXrkAyqDskSpvb5o9agqQ9NVfweeGdh49bNWm_NW89O29Fc_eobpRTuGKTyR9ktvQHwq4nKiiKbflNrjne7txSPtDgemSC0dkyJRhmbHR83JvcEI1NBC1sOdbmKfbMOMI8AszmhkTzaJ_kW5BxWoo_c-NDJypNApxe1I8phdq1EWI0pU17-4bGjXs9OGlfrTN4IKKUhIIG7ITsqkz_RdmeZtBW8FMltV7gTuo1VSBZ9nqi4XLSrzV2IPoyHdP6aF8qP4AV8uD8tDbq4cuRV2FV27401jgoR5-BE4wA");
-    getMethod();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var json = this.responseText;
+                console.log(json);
+                var object = JSON.parse(json);
+                console.log(object);
+                insertValues(object);
+            } else {
+                alert(xhr.status);
+            }
+        }
+    }
+    getMethodForCurrency();
+    getMethodForPaymentMethod();
+    getMethodForPaymentType();
+
+    function insertValues(object) {
+        document.getElementById("employeeId").value = object.expense["employee"].userId;
+
+        document.getElementById("expenseId").value = object.expense["id"];
+
+        document.getElementById("ExpenseName").value = object.expense["name"];
+
+        document.getElementById("paymentType").value = object.expense["paymentType"].id;
+        console.log(object.expense["paymentType"].name)
+
+        document.getElementById("paymentMethod").value = object.expense["paymentMethod"].id;
+        console.log(object.expense["paymentMethod"].name)
+
+        console.log(object.expense["invoiceDate"].split("T")[0]);
+        document.getElementById("paymentDate").value = object.expense["invoiceDate"].split("T")[0];
+
+        if (object.expense.payoutWithSalary == true) {
+            document.getElementById("payoutWithSalary").checked;
+        }
+        document.getElementById("notesField").value = object.expense["notes"];
+        document.getElementById("totalAmt").value = object.expense["amount"];
+        document.getElementById("currency").value = object.expense["currency"].currencyCode;
+    }
+
+    xhr.send();
 }
 
 function updateData() {
-    var ID = document.getElementById("IDOfExpense").value;
+    var ID = document.getElementById("expenseId").value;
     console.log(ID);
     var url = "http://localhost/ec/expense?id=" + ID;
     console.log(url)
@@ -365,25 +452,25 @@ function updateData() {
 
     var data = {
         "attachments": [],
-        "amount": document.getElementById("Amount").value,
+        "amount": document.getElementById("totalAmt").value,
         "currency": {
-            "currencyCode": document.getElementById("nameOfCurrencyCode").value,
+            "currencyCode": document.getElementById("currency").value,
         },
         "employee": {
-            "userId": document.getElementById("IDOfEmployee").value,
+            "userId": document.getElementById("employeeId").value,
         },
         "paymentType": {
-            "id": 170
+            "id": document.getElementById("paymentType").value
         },
         "paymentMethod": {
-            "id": 2
+            "id": document.getElementById("paymentMethod").value
         },
-        "invoiceDate": document.getElementById("dateOfPayment").value,
-        "name": document.getElementById("nameOfExpense").value,
+        "invoiceDate": document.getElementById("paymentDate").value,
+        "name": document.getElementById("ExpenseName").value,
         "hasImage": true,
         "imageBase64": "",
         "isActive": true,
-        "notes": "Test notes",
+        "notes": document.getElementById("notesField").value,
         "payoutWithSalary": null,
         "lineItems": [],
         "dimensions": []

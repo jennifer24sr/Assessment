@@ -11,131 +11,94 @@
 </head>
 
 <body onload="getData()" class="data-body">
-    <!-- <div class="edit-form">
-    </div> -->
-    <div class="form-container">
+    <div class="edit-Data" id="expenseForm">
         <h3 class="form-title">Expense Claim Details</h3>
-        <form name="expenseForm" id="updateExpenseForm" class="form-content">
-            <div class="close-btn" onclick="closeform()">&times;</div>
-            <label for="Employee" class="form-label">Employee</label>
-            <select id="employee" name="Employee" class="Drop-down">
-            </select>
-            <div class="alert-msg" id="employeeAlert"></div>
-            <label for="ExpenseName" class="form-label">Expense Name</label>
+        <form name="editData" id="editData" class="form-content">
+            <label for="employeeId" class="form-label">Employee ID</label>
+            <input type="text" id="employeeId" name="employeeId" class="input-textbox" disabled/>
+
+            <label for="expenseId" class="form-label">Expense ID</label>
+            <input type="text" id="expenseId" name="expenseId" class="input-textbox" disabled/>
+
+
+            <label for="ExpenseName" class="form-label">Expense Name </label>
             <input type="text" id="ExpenseName" name="ExpenseName" placeholder="Expense Name" class="input-textbox" />
-            <div class="payment-section">
-                <div class="payment">
-                    <label for="paymentType" class="form-label">Payment Type</label>
-                    <select id="paymentType" name="paymentType" class="Drop-down">
-                    </select>
-                </div>
-                <div class="payment">
-                    <label for="paymentMethod" class="form-label">Payment Method</label>
-                    <select id="paymentMethod" name="paymentMethod" class="Drop-down">
-                    </select>
-                </div>
-            </div>
+
+            <label for="paymentType" class="form-label">Payment Type</label>
+            <select id="paymentType" name="paymentType" class="Drop-down">
+                <option disabled selected>Select</option>
+            </select>
+
+            <label for="paymentMethod" class="form-label">Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" class="Drop-down">
+                <option disabled selected>Select</option>
+            </select>
+
             <div class="payment-style">
                 <div class="payment">
                     <label for="paymentDate" class="form-label">Payment Date</label>
-                    <input type="date" id="paymentDate" name="paymentDate" class="input-textbox" max="2022-04-13" />
+                    <input type="date" id="paymentDate" name="paymentDate" class="input-textbox" onfocus="setMaxdate()" min="2020-01-01" />
                 </div>
+
                 <div class="payment">
-                    <label for="payoutWithSalary" class="form-label">Payout With Salary</label>
                     <input type="checkbox" id="payoutWithSalary" name="payoutWithSalary" class="input-checkbox" />
-                </div>
-                <div class="currency-section">
-                    <div class="payment">
-                        <label for="totalAmt" class="form-label">Total <span class="required-star">*</span></label>
-                        <input type="text" name="totalAmt" id="totalAmt" class="input-textbox" value="0.00" />
-                    </div>
-                    <div class="payment">
-                        <label for="currency" class="form-label">Currency <span class="required-star">*</span></label>
-                        <select name="currency" id="currency" class="Drop-down">
-                        </select>
-                    </div>
-                </div>
-                <div class="form-btns">
-                    <button type="button" class="btn update-btn" onclick="updateData()">Update</button>
+                    <label for="payoutWithSalary" class="checkbox-label">Payout With Salary</label>
                 </div>
             </div>
-        </form>
-    </div>
-    <div class="card-container" id="cardContainer" style="display: none;">
+            <label for="notes" class="form-label">Notes</label>
+            <input type="text" name="notesField" id="notesField" class="input-textbox" />
+            <div class="currency-section">
+                <div class="payments">
+                    <label for="totalAmt" class="form-label">Total</label>
+                    <input type="text" name="totalAmt" id="totalAmt" class="input-textbox" />
 
-        <div class="card-details">
-            <div class="card-key">Employee ID</div>
-            <div class="card-value" id="postedEmployeeID">Hello</div>
-        </div>
-        <div class="card-details">
-            <div class="card-key">Employee</div>
-            <div class="card-value" id="postedEmployeeName">Hello</div>
-        </div>
-        <div class="card-details">
-            <div class="card-key">Expense ID</div>
-            <div class="card-value" id="postedExpenseID">Hello</div>
-        </div>
-        <div class="card-details">
-            <div class="card-key">Expense Name</div>
-            <div class="card-value" id="postedExpense">23456</div>
-        </div>
-        <div class="card-details">
-            <div class="card-key">Payment Date</div>
-            <div class="card-value" id="postedPaymentDate">2345678</div>
-        </div>
-        <div class="card-details">
-            <div class="card-key">Total</div>
-            <div class="card-value" id="postedTotalAmt">234567</div>
-        </div>
-        <div class="card-details">
-            <div class="card-key">Currency Name</div>
-            <div class="card-value" id="postedCurrencyName">2345678</div>
-        </div>
-        <div class="card-details">
-            <div class="card-key">Currency Code</div>
-            <div class="card-value" id="postedCurrencyCode">2345678</div>
-        </div>
-        <div class="form-btns">
-            <button type="button" id="edit-btn" class="form-btn edit-btn" onclick="openForm(this)">Edit</button>
-            <button type="button" id="delete-btn" class="form-btn delete-btn" onclick="deleteData(this)">Delete</button>
-            <button type="button" id="accept-btn" class="form-btn accept-btn">Accept</button>
-            <button type="button" id="reject-btn" class="form-btn reject-btn">Reject</button>
-        </div>
+                </div>
+                <div class="payments">
+                    <label for="currency" class="form-label">Currency</label>
+                    <select name="currency" id="currency" class="Drop-down">
+                            <option disabled selected>Select</option>
+                        </select>
+                </div>
+            </div>
+            <button type="button" class="btn update-btn" onclick="updateData()">Update</button>
+            <button type="button" class="btn close-btn" onclick="closeform()">Cancel</button>
+    </div>
+    </form>
     </div>
     <div class="cards-grid" id="cardGrid">
+        <div class="card-container" id="cardContainer">
+            <div class="card-header" id="cardHeader">
+                <img src="./avatar.jpg" alt="" height="100px" width="100px" class="avatar-img" />
+                <div class="header-details">
+                    <div id="postedEmployeeName" class="header-content emp-name"></div>
+                    <div id="postedEmployeeID" class="header-content"></div>
+                </div>
+            </div>
+            <div class="expense-name" id="postedExpense"></div>
+            <div class="Id" id="postedExpenseID"></div>
+            <div class="card-details">
+                <div class="card-key">Date</div>
+                <div class="card-value" id="postedPaymentDate"></div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Total</div>
+                <div class="card-value" id="postedTotalAmt"></div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Currency Code</div>
+                <div class="card-value" id="postedCurrencyCode"></div>
+            </div>
+            <div class="card-details">
+                <div class="card-key">Notes</div>
+                <div class="card-value" id="postedNotes"></div>
+            </div>
+            <div class="form-btns">
+                <button type="button" id="edit-btn" class="form-btn edit-btn" onclick="openForm(this)">Edit</button>
+                <button type="button" id="delete-btn" class="form-btn delete-btn" onclick="deleteData(this)">Delete</button>
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>
-<!-- <div class="card-details">
-    <div class="card-key">Payment Type</div>
-    <div class="card-value" id="postedPaymentType">yuio</div>
-</div> -->
-<!-- <div class="card-details">
-    <div class="card-key">Payment Method</div>
-    <div class="card-value" id="postedPaymentMethod">2345678</div>
-</div> -->
-<!-- <div class="card-details">
-    <div class="card-key">Payout with salary</div>
-    <div class="card-value" id="postedPayoutDetails">asdf</div>
-</div> -->
-<!-- <label class="editDataLabel">Employee ID</label>
-    <input type="text" id="IDOfEmployee" name="employeeID" class="editTextBox" disabled/>
-    <label class="editDataLabel">Employee</label>
-    <input type="text" id="nameOfEmployee" name="employeeName" class="editTextBox" disabled />
-<label class="editDataLabel">Expense ID</label>
-<input type="text" id="IDOfExpense" name="expenseID" class="editTextBox" disabled />
-<label class="editDataLabel">Expense Name</label>
-<input type="text" id="nameOfExpense" name="expenseName" class="editTextBox" />
-<label class="editDataLabel">Payment Date</label>
-<input type="text" id="dateOfPayment" name="date-payment" class="editTextBox" />
-<label class="editDataLabel">Total</label>
-<input type="text" id="Amount" name="total-amt" class="editTextBox" />
-<label class="editDataLabel">Currency Name</label>
-<input type="text" id="nameOfCurrency" name="name-currency" class="editTextBox" />
-<label class="editDataLabel">Currency Code</label>
-<input type="text" id="nameOfCurrencyCode" name="code-currency" class="editTextBox" /> -->
-
-
-<!-- <form class="edit-Data" id="editData">
-</form> -->
